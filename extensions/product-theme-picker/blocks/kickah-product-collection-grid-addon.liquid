@@ -1,0 +1,25 @@
+{%- liquid
+  # Ensure this block only runs in the product grid context
+  if section.id contains 'product-grid'
+    assign is_product_grid = true
+  endif
+-%}
+
+{%- if is_product_grid -%}
+  {%- style -%}
+
+  {%- endstyle -%}
+
+{%- endif -%}
+
+
+{%- schema -%}
+  {
+    "type": "select",
+    "id": "sale_banner_main_style",
+    "label": "Main Style",
+    "options": [
+        { "value": "pg-p-mosaic", "label": "Mosaic"}
+    ]
+  }
+{%- endschema -%}
