@@ -1,0 +1,43 @@
+{% comment %} sections/dawn-product-grid.liquid {% endcomment %}
+{{ 'custom-product-grid.css' | asset_url | stylesheet_tag }}
+
+<div class="custom-collection page-width" id="product-grid" data-id="{{ section.id }}">
+  <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
+  {% render 'dawn-facets', 
+    enable_filtering: block.settings.enable_filtering, 
+    enable_sorting: block.settings.enable_sorting 
+  %}
+
+  <div id="ProductGridContainer">
+    <div class="custom-product-grid-container collection">
+      <ul class="custom-product-grid grid--2-col grid--4-col-desktop">
+        {% for product in collection.products %}
+          <li class="custom-grid-item">
+            {% render 'dawn-product-card', product: product %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Dawn Product Grid",
+    "target": "section",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_filtering",
+        "label": "Enable Filtering",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_sorting",
+        "label": "Enable Sorting",
+        "default": true
+      }
+    ]
+  }
+{% endschema %}

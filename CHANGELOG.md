@@ -1,3 +1,9 @@
+# custom changes
+
+## 2025.03.22
+- Setup first extension
+
+
 # @shopify/shopify-app-template-remix
 
 ## 2025.03.01

@@ -1,0 +1,186 @@
+.custom-collection {
+  padding: 0 2rem;
+}
+
+/* Facets (filter and sort)  */
+.facets {
+  padding: 1rem 0;
+  background-color: #f7f7f7; /* Light gray background like in the screenshot */
+  border-bottom: 1px solid #e5e5e5; /* Subtle border */
+}
+
+ /* Reset form styles to prevent layout issues */
+.facets form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0; /* Remove default form margin */
+  padding: 0; /* Remove default form padding */
+  width: 100%; /* Ensure form takes full width of .facets */
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Facets - filter */
+.facets__filter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+ }
+ 
+ .facets__filter label {
+  font-size: 1.1rem; /* Increased font size (was 1rem) */
+  font-weight: 500;
+  color: #333;
+ }
+ 
+ .facets__filter select {
+  padding: 0.5rem 1.5rem 0.5rem 0; /* Adjusted padding for no border */
+  border: none; /* Remove border */
+  outline: none; /* Remove outline */
+  background-color: transparent; /* No background */
+  font-size: 1rem; /* Increased font size (was 0.9rem) */
+  color: #333;
+  appearance: none; /* Remove default dropdown arrow */
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="6" viewBox="0 0 12 6"><path fill="%23333" d="M0 0h12L6 6z"/></svg>'); /* Custom downward arrow */
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease; /* Smooth hover transition */
+ }
+ 
+ /* Hover effect for filter dropdowns */
+ .facets__filter select:hover {
+  background-color: #e0e0e0; /* Light gray highlight on hover */
+  border-radius: 4px;
+ }
+
+/* Facets - sort */
+.facets__sort {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+ }
+ 
+ .facets__sort label {
+  font-size: 1.1rem; /* Increased font size (was 1rem) */
+  font-weight: 500;
+  color: #333;
+ }
+ 
+ .facets__sort select {
+  padding: 0.5rem 1.5rem 0.5rem 0;
+  border: none; /* Remove border */
+  outline: none; /* Remove outline */
+  background-color: transparent; /* No background */
+  font-size: 1rem; /* Increased font size (was 0.9rem) */
+  color: #333;
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="6" viewBox="0 0 12 6"><path fill="%23333" d="M0 0h12L6 6z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+ }
+ 
+ /* Hover effect for sort dropdown */
+ .facets__sort select:hover {
+  background-color: #e0e0e0; /* Light gray highlight on hover */
+  border-radius: 4px;
+ }
+
+/* Facets - Product count */
+.facets__count {
+  margin-left: 1rem;
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Loading state for AJAX */
+.collection.loading {
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.facets__count.loading {
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+/*** END Facets ***/
+
+/* Product grid styling */
+.custom-product-grid-container {
+  margin-top: 2rem;
+}
+
+.custom-product-grid {
+  display: grid;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.custom-grid-item {
+  padding: 0.5rem;
+}
+
+select {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.grid--2-col {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Product card styling */
+.dawn-product-card {
+  text-align: center;
+  padding: 1rem;
+}
+
+.dawn-product-card img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 749px) {
+  .grid--2-col {
+    grid-template-columns: 1fr;
+  }
+
+  .facets {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .facets__count {
+    margin-left: 0.5rem;
+  }
+}
+
+/* Additional media queries for product images */
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  .dawn-product-card img {
+    width: 80%;
+    max-width: 300px;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .grid--4-col-desktop {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .dawn-product-card img {
+    width: 100%;
+    max-width: 400px;
+  }
+}

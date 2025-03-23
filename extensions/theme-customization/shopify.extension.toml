@@ -1,0 +1,4 @@
+# extensions/theme-customization/shopify.extension.toml
+name = "theme-customization"
+type = "theme_app_extension"
+api_version = "1.1"
