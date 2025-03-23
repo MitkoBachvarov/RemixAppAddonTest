@@ -1,7 +1,7 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
 client_id = "08c38da86db4224e99393e130267421e"
-application_url = "https://ve-gem-determines-rss.trycloudflare.com"
+application_url = "https://parallel-emerald-himself-ordinary.trycloudflare.com"
 embedded = true
 name = "theme-customization"
 handle = "theme-customization-4"
@@ -19,9 +19,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://ve-gem-determines-rss.trycloudflare.com/auth/callback",
-  "https://ve-gem-determines-rss.trycloudflare.com/auth/shopify/callback",
-  "https://ve-gem-determines-rss.trycloudflare.com/api/auth/callback"
+  "https://parallel-emerald-himself-ordinary.trycloudflare.com/auth/callback",
+  "https://parallel-emerald-himself-ordinary.trycloudflare.com/auth/shopify/callback",
+  "https://parallel-emerald-himself-ordinary.trycloudflare.com/api/auth/callback"
 ]
 
 [pos]

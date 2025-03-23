@@ -4,15 +4,22 @@
 
 /* Facets (filter and sort)  */
 .facets {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 1rem 0;
   background-color: #f7f7f7; /* Light gray background like in the screenshot */
   border-bottom: 1px solid #e5e5e5; /* Subtle border */
+}
+
+ /* Reset form styles to prevent layout issues */
+.facets form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0; /* Remove default form margin */
+  padding: 0; /* Remove default form padding */
+  width: 100%; /* Ensure form takes full width of .facets */
   flex-wrap: wrap;
   gap: 1rem;
- }
+}
 
 /* Facets - filter */
 .facets__filter {
@@ -89,6 +96,17 @@
   margin-left: 1rem;
   font-size: 1rem;
   color: #666;
+}
+
+/* Loading state for AJAX */
+.collection.loading {
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.facets__count.loading {
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
 }
 
 /*** END Facets ***/
