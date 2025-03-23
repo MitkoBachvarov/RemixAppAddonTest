@@ -1,12 +1,20 @@
-### Plan for 19.03.2025: 
+### 19.03.2025: 
 
-1. Get rid of old promotion logic and settings - DONE
-2. Define settings for product-grid homepage - DONE 
-	2.1. Settings must be simple at the start -> checkbox that turns it on or off, nothing more. This is a test! 
-3. Test out settings with first design - DONE
+1. Get rid of old promotion logic and settings ✓
+2. Define settings for product-grid homepage ✓ 
+	2.1. Settings must be simple at the start -> checkbox that turns it on or off, nothing more.
+3. Test out settings with first design ✓
 
+### 22.03.2025:
+1. Setup first App extension ✓
+2. Add section which will add custom styling to products dynamically using JS ↺
 
-### Plan for 22.03.2025:
-1. Setup first App extension - DONE
-2. Add section which will add custom styling to products dynamically using JS - In Progress
+###  23.03.2025:
+1. Cont. custom styling section extension ✓
+2. Setup custom product grid 
+	- Filter, search, product count ✓
+	- Product grid ✓
+	- Responsive design ↺
+3. Organize code + file structure ✓
+
 	

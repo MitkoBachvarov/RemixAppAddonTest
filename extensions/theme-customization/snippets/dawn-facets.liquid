@@ -1,0 +1,34 @@
+{% comment %} snippets/dawn-facets.liquid {% endcomment %}
+<div class="facets">
+  {% if enable_filtering %}
+    <div class="facets__filter">
+      <label>Filter:</label>
+      <select id="filter-availability" name="filter-availability">
+        <option value="">Availability</option>
+        <option value="in-stock">In Stock</option>
+        <option value="out-of-stock">Out of Stock</option>
+      </select>
+      <select id="filter-price" name="filter-price">
+        <option value="">Price</option>
+        <option value="low-to-high">Low to High</option>
+        <option value="high-to-low">High to Low</option>
+      </select>
+    </div>
+  {% endif %}
+
+  {% if enable_sorting %}
+    <div class="facets__sort" data-product-count="{{ collection.products_count }}">
+      <label>Sort by:</label>
+      <select id="sort-by" name="sort-by">
+        {% for option in collection.sort_options %}
+          <option value="{{ option.value }}" {% if option.value == collection.sort_by %}selected{% endif %}>
+            {{ option.name }}
+          </option>
+        {% endfor %}
+      </select>
+      <span class="facets__count">
+       {{ collection.products_count }} {{ collection.products_count | pluralize: 'product', 'products' }}
+      </span>
+    </div>
+  {% endif %}
+</div>

@@ -1,25 +1,17 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
-client_id = "da85bc38bd236557b41d9aaa1743e0fb"
-application_url = "https://rehabilitation-cuba-tvs-routine.trycloudflare.com"
+client_id = "08c38da86db4224e99393e130267421e"
+application_url = "https://ve-gem-determines-rss.trycloudflare.com"
 embedded = true
-name = "js-kickah-designs"
-handle = "js-kickah-designs"
+name = "theme-customization"
+handle = "theme-customization-4"
 
 [build]
-include_config_on_deploy = true
 automatically_update_urls_on_dev = true
+include_config_on_deploy = true
 
 [webhooks]
 api_version = "2025-01"
-
-  [[webhooks.subscriptions]]
-  topics = [ "app/uninstalled" ]
-  uri = "/webhooks/app/uninstalled"
-
-  [[webhooks.subscriptions]]
-  topics = [ "app/scopes_update" ]
-  uri = "/webhooks/app/scopes_update"
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
@@ -27,9 +19,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://rehabilitation-cuba-tvs-routine.trycloudflare.com/auth/callback",
-  "https://rehabilitation-cuba-tvs-routine.trycloudflare.com/auth/shopify/callback",
-  "https://rehabilitation-cuba-tvs-routine.trycloudflare.com/api/auth/callback"
+  "https://ve-gem-determines-rss.trycloudflare.com/auth/callback",
+  "https://ve-gem-determines-rss.trycloudflare.com/auth/shopify/callback",
+  "https://ve-gem-determines-rss.trycloudflare.com/api/auth/callback"
 ]
 
 [pos]
