@@ -1,0 +1,47 @@
+<!-- This block doesn't render visible content, just defines styling rules via settings -->
+{% schema %}
+{
+  "name": "Style Rule Manager",
+  "target": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Product Type Styling Rules"
+    },
+    {
+      "type": "text",
+      "id": "product_type_1",
+      "label": "Product Type 1",
+      "info": "Enter the exact product type to target (case sensitive)"
+    },
+    {
+      "type": "select",
+      "id": "style_class_1",
+      "label": "Style for Product Type 1",
+      "options": [
+        { "value": "mosaic", "label": "Mosaic" },
+        { "value": "grid", "label": "Grid" },
+        { "value": "minimal", "label": "Minimal" }
+      ],
+      "default": "mosaic"
+    },
+    {
+      "type": "text",
+      "id": "product_type_2",
+      "label": "Product Type 2",
+      "info": "Enter the exact product type to target (case sensitive)"
+    },
+    {
+      "type": "select",
+      "id": "style_class_2",
+      "label": "Style for Product Type 2",
+      "options": [
+        { "value": "mosaic", "label": "Mosaic" },
+        { "value": "grid", "label": "Grid" },
+        { "value": "minimal", "label": "Minimal" }
+      ],
+      "default": "mosaic"
+    }
+  ]
+}
+{% endschema %}

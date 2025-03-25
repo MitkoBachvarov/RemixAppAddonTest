@@ -1,3 +1,12 @@
+### 25.03.2025:
+1. Add custom styling based on settings (at least 1 style) ↺ 
+	- Added dynamic classes based on settings
+2. Research grid options for different styles ↺ 
+3. Research bundle JSX to JS for execution via snippets ↺ 
+
+## TODO: 
+1. Fix facets design. 
+
 ###  23.03.2025:
 1. Cont. custom styling section extension ✓
 2. Setup custom product grid 

@@ -1,0 +1,169 @@
+/* Reset default margins and ensure box-sizing is consistent */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Grid container styling */
+.custom-product-grid {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><circle cx="5" cy="5" r="2" fill="%23ffe6f0"/><circle cx="15" cy="15" r="2" fill="%23e6f7e6"/></svg>') repeat; /* Subtle Easter egg dots */
+}
+
+/* Grid item styling */
+.custom-grid-item {
+    width: 100%;
+}
+
+/* Card styling (base) */
+.dawn-product-card {
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    overflow: visible;
+    border: 2px solid #fffacd;
+    background: rgba(255, 255, 255, 0.95);
+}
+
+/* Mosaic-specific card styling */
+.dawn-product-card.mosaic {
+    background: repeating-linear-gradient(
+        45deg,
+        #ffe6f0, /* Pastel pink */
+        #ffe6f0 20px,
+        #fff3e6, /* Pale peach */
+        #fff3e6 40px,
+        #e6f7e6, /* Mint green */
+        #e6f7e6 60px,
+        #f0e6ff  /* Light lavender */
+        60px,
+        #f0e6ff 80px
+    );
+}
+
+/* Link styling */
+.dawn-product-card a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* Product image */
+.product-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+    object-fit: cover;
+    border-bottom: 2px dashed #ffd700;
+}
+
+/* Product info */
+.product-info {
+    padding: 15px;
+    text-align: center;
+}
+
+/* Product title */
+.product-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #4a704a;
+    margin-bottom: 10px;
+    font-family: 'Comic Sans MS', cursive;
+}
+
+/* Product price (base) */
+.product-price {
+    font-size: 14px;
+    color: #ff69b4;
+    font-weight: 500;
+}
+
+/* Original price (strikethrough) */
+.original-price {
+    text-decoration: line-through;
+    color: #888; /* Grayed out */
+    margin-right: 8px; /* Space between prices */
+}
+
+/* Discounted price */
+.discounted-price {
+    color: #ff69b4; /* Keep festive pink */
+    font-weight: 700; /* Bolder for emphasis */
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+    .custom-product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .custom-product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .custom-product-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+
+/* On-sale styling for Mosaic */
+.custom-grid-item.on-sale .dawn-product-card {
+    position: relative;
+    padding: 15px;
+}
+
+.custom-grid-item.on-sale .dawn-product-card.mosaic {
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(255, 230, 240, 0.5), /* Sheer pink */
+        rgba(255, 230, 240, 0.5) 20px,
+        rgba(230, 247, 230, 0.5), /* Sheer mint */
+        rgba(230, 247, 230, 0.5) 40px,
+        rgba(255, 243, 230, 0.5), /* Sheer peach */
+        rgba(255, 243, 230, 0.5) 60px,
+        rgba(240, 230, 255, 0.5) /* Sheer lavender */
+        60px,
+        rgba(240, 230, 255, 0.5) 80px
+    );
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+}
+
+.custom-grid-item.on-sale .dawn-product-card.mosaic::after {
+    content: "EASTER DEAL";
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    background: repeating-linear-gradient(
+        45deg,
+        #ffd700, /* Gold */
+        #ffd700 10px,
+        #ff69b4, /* Hot pink */
+        #ff69b4 20px
+    );
+    color: #4a2c0f;
+    padding: 8px 15px;
+    font-size: 14px;
+    font-weight: 900;
+    text-transform: uppercase;
+    border-radius: 50px;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+    z-index: 10;
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}

@@ -1,5 +1,6 @@
 {% comment %} sections/dawn-product-grid.liquid {% endcomment %}
-{{ 'custom-product-grid.css' | asset_url | stylesheet_tag }}
+{% comment %} {{ 'custom-product-grid.css' | asset_url | stylesheet_tag }} {% endcomment %}
+{% comment %} {{ 'mosaic-style.css' | asset_url | stylesheet_tag }} {% endcomment %}
 
 <div class="custom-collection page-width" id="product-grid" data-id="{{ section.id }}">
   <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
@@ -12,8 +13,8 @@
     <div class="custom-product-grid-container collection">
       <ul class="custom-product-grid grid--2-col grid--4-col-desktop">
         {% for product in collection.products %}
-          <li class="custom-grid-item">
-            {% render 'dawn-product-card', product: product %}
+          <li class="custom-grid-item{% if product.compare_at_price > product.price %} on-sale{% endif %}">
+            {% render 'dawn-product-card', product: product, block: block.settings %}
           </li>
         {% endfor %}
       </ul>
@@ -33,11 +34,39 @@
         "default": true
       },
       {
-        "type": "checkbox",
-        "id": "enable_sorting",
-        "label": "Enable Sorting",
-        "default": true
+        "type": "text",
+        "id": "product_type_1",
+        "label": "Product Type 1",
+        "info": "Enter the exact product type to target (case sensitive)"
+      },
+      {
+        "type": "select",
+        "id": "style_class_1",
+        "label": "Style for Product Type 1",
+        "options": [
+          { "value": "mosaic", "label": "Mosaic" },
+          { "value": "grid", "label": "Grid" },
+          { "value": "minimal", "label": "Minimal" }
+        ],
+        "default": "mosaic"
+      },
+      {
+        "type": "text",
+        "id": "product_type_2",
+        "label": "Product Type 2",
+        "info": "Enter the exact product type to target (case sensitive)"
+      },
+      {
+        "type": "select",
+        "id": "style_class_2",
+        "label": "Style for Product Type 2",
+        "options": [
+          { "value": "mosaic", "label": "Mosaic" },
+          { "value": "grid", "label": "Grid" },
+          { "value": "minimal", "label": "Minimal" }
+        ],
+        "default": "mosaic"
       }
-    ]
+    ],
   }
 {% endschema %}
